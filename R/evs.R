@@ -90,7 +90,7 @@ evs = function(x, y, B1, B2, d, model = 'gaussian', tol = c(0.1, 0.05, 0.01),
 
   result = list(sel_vec/B1)
   for(i in 1:length(tol)) {
-    result[[i+1]] = BH_method(tol[i], sel_vec)
+    result[[i+1]] = BH_method(tol[i], sel_vec, B1, d, p)
   }
 
   names(result) = c("Selection_proportion", noquote(paste("Tolerance", tol[1:length(tol)])))
