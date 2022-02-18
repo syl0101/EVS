@@ -29,14 +29,10 @@ evs = function(x, y, B1, B2, d, model = 'gaussian', tol = c(0.1, 0.05, 0.01),
   }
 
   if(parallel) {
-    #if(is.null(ncore)) {
-    #  ncore = floor(0.5 * detectCores()) # default setting = 0.25 * number of cores
-    #}
-    #    cl = makeCluster(ncore)
     registerDoParallel(cl)
     clusterExport(cl, c("my_mse_index", "logit", "my_logit_loglik", "coxph.fit", "my_pois_loglik",
                         "my_coxph_ploglik","my_optim_logit", "my_optim_pois",
-                        "my_optim_coxphfit", "temp_parallel", "Surv"), envir=environment())
+                        "my_optim_coxphfit", "temp_parallel"), envir=environment())
 
     sel.id = foreach(b1 = 1:B1, .combine = 'c') %dopar% {
       temp_parallel(x, y, b1, B2, n, p, d, model)
