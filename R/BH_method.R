@@ -3,8 +3,11 @@
 #'
 #' @param tol tolerance level vector or single element
 #' @param selection_total selection counts vector of size 'p'
+#' @param B1 Total number of ensemble
+#' @param d random seletion dimension
+#' @param p total number of covariates
 #' @export BH_method
-BH_method = function(tol, selection_total) {
+BH_method = function(tol, selection_total, B1, d, p) {
 
   pval = get_exact_pval(selection_total, B1, d, p)
   pval_sorted = sort(pval, decreasing = FALSE)
