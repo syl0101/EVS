@@ -1,4 +1,4 @@
-Package: evs
+Package: EVS
 Type: Package
 Title: Ensemble Variable Selection using Random Selection
 Version: 0.1.0
