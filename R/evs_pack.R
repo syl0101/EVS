@@ -6,6 +6,6 @@
 #'
 #' @author Seogyoung Lee, Seungjun Shin \email{syl0101@korea.ac.kr}
 #'
-#' @name evs
+#' @name EVS
 #'
 #' @import stats survival doParallel parallel foreach
