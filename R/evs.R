@@ -38,7 +38,6 @@ evs = function(x, y, B1, B2, d, model = 'gaussian', tol = c(0.1, 0.05, 0.01),
       temp_parallel(x, y, b1, B2, n, p, d, model)
     }
 
-    #    stopCluster(cl)
   } else {
 
     sel.id = NULL
